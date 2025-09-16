@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Face Recognition System</h1>
+            <div class="status" id="status">
+                <span class="status-dot offline"></span>
+                Camera Offline
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="video-section">
+                <div class="video-container">
+                    <video id="video" autoplay muted playsinline></video>
+                    <div class="video-placeholder" id="placeholder">
+                        <div class="placeholder-icon">📹</div>
+                        <p>Click "Start Camera" to begin</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-primary" id="startBtn">Start Camera</button>
+                <button class="btn btn-secondary" id="predictBtn" disabled>Recognize Face</button>
+                <button class="btn btn-outline" id="stopBtn" disabled>Stop Camera</button>
+            </div>
+
+            <div class="result-section">
+                <div class="result-card">
+                    <h3>Recognition Result</h3>
+                    <div class="result-content">
+                        <div class="loading hidden" id="loading">
+                            <div class="spinner"></div>
+                            <span>Processing...</span>
+                        </div>
+                        <div class="result-text" id="result">No data available</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
