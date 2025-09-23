@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Load model and labels
 print("Loading model...")
 try:
-    model = load_model("keras_model.h5")
+    model = load_model("face_cnn_model.h5")
     print("Model loaded successfully!")
     
     # Load labels from labels.txt
@@ -42,15 +42,14 @@ def predict_face_from_image(image_data):
         if frame is None:
             return "Invalid image"
         
-        # Resize image to 224x224 (common for keras models from Teachable Machine)
-        img = cv2.resize(frame, (224, 224))
+        img = cv2.resize(frame, (96, 96))
         img = np.array(img, dtype=np.float32)
         
         # Normalize pixel values to [0, 1]
         img = img / 255.0
         
         # Reshape for model input
-        img = img.reshape(1, 224, 224, 3)
+        img = img.reshape(1, 96, 96, 3)
         
         # Predict
         pred = model.predict(img)
