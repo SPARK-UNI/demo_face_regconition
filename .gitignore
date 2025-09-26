@@ -1,6 +1,10 @@
-Face_data/
-Face_data_aug/
+# Ignore all images in Face_data and Face_data_aug
+Face_data/**/*.{jpg,jpeg,png,bmp,gif,webp,tiff}
+Face_data_aug/**/*.{jpg,jpeg,png,bmp,gif,webp,tiff}
 
+# Allow keepers
+!Face_data/**/.gitkeep
+!Face_data_aug/**/.gitkeep
 
 *.pyc
 __pycache__/
