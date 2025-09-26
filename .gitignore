@@ -1,0 +1,9 @@
+Face_data/
+Face_data_aug/
+
+
+*.pyc
+__pycache__/
+.DS_Store
+.vscode/
+.idea/
